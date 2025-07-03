@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shodhlekhan - Research Writing Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #f9f9f9;
+            margin: 0;
+        }
+		
+        header {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            color: #002244;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.6s ease-in-out;
+        }
+		
+		body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+		
+		@keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header img {
+            height: 150px;
+            transition: transform 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.05);
+        }
+		
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+         header img {
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #002244;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            background-color: #002244;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: #00416A;
+        }
+		
+        section {
+            padding: 4rem 2rem;
+        }
+        #home {
+            background-image: url('https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            color: white;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+        #about, #contact {
+            background-color: #fff;
+        }
+        .services ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding-left: 0;
+        }
+        .services ul li {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            color: #002244;
+        }
+        .services ul li i {
+            margin-right: 8px;
+        }
+        .features {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
+        }
+        .features h2 {
+            color: #ffcc00;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .feature-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px 20px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        #testimonials {
+            position: relative;
+            padding: 4rem 2rem;
+            background: #111;
+            color: white;
+        }
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+        }
+        .testimonial-slider::-webkit-scrollbar {
+            display: none;
+        }
+        .testimonial {
+            min-width: 300px;
+            background: rgba(255,255,255,0.9);
+            color: #002244;
+            padding: 1rem;
+            border-left: 4px solid #002244;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            scroll-snap-align: center;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 10px;
+            background: #002244;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        .whatsapp-float a {
+            background: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        footer {
+            background: #002244;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+         @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 1rem;
+                display: none;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+		
+		<img src="logo.png" alt="Shodhlekhan Logo"> 
+			
+		<nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+				<li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1><i class="fas fa-feather-alt"></i> Welcome to Shodhlekhan</h1>
+        <p>Your trusted partner in academic and research writing services.</p>
+    </section>
+
+    <section id="about">
+        <h2><i class="fas fa-users"></i> About Us</h2>
+        <p>
+            Shodhlekhan is a professional academic support service dedicated to helping researchers, scholars, and students excel in their academic pursuits. We specialize in providing research writing, thesis development, plagiarism removal, journal publication support, and more.
+        </p>
+        <p>
+            Our team of experts comes from diverse academic backgrounds and is committed to ensuring that every document we assist with meets the highest standards of quality, originality, and relevance.
+        </p>
+        <p>
+            With a strong belief in "लेखनम् ज्ञानस्य द्वारम्" — Writing is the Gateway to Knowledge — we at Shodhlekhan uphold the values of authenticity, precision, and timely delivery.
+        </p>
+    </section>
+
+    <section id="services" class="services">
+        <h2><i class="fas fa-concierge-bell"></i> Our Services</h2>
+        <ul>
+            <li><i class="fas fa-file-alt"></i> Research Paper Writing</li>
+            <li><i class="fas fa-book"></i> Thesis Assistance</li>
+            <li><i class="fas fa-university"></i> Dissertation Support</li>
+            <li><i class="fas fa-check-circle"></i> Plagiarism Checking & Removal</li>
+            <li><i class="fas fa-lightbulb"></i> Proposal Drafting</li>
+           
+        </ul>
+    </section>
+
+    <section id ="features" class="features">
+        <h2><i class="fas fa-star"></i> Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fas fa-clock"></i>
+                <h3>On-Time Delivery</h3>
+                <p>We meet deadlines with quality assurance and dedicated attention.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Original & Verified</h3>
+                <p>100% plagiarism-free reports with originality certification.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Academic Experts</h3>
+                <p>Our panel consists of PhDs, professors, and experienced analysts.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-edit"></i>
+                <h3>Editing & Proofreading</h3>
+                <p>Professional editing for clarity, structure, and grammar improvements.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Analysis Support</h3>
+                <p>Expert help in statistical tools like SPSS, R, Python, and Excel.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-language"></i>
+                <h3>Multilingual Assistance</h3>
+                <p>Support for research writing in multiple regional and global languages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2><i class="fas fa-comment-dots"></i> Testimonials</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">“Shodhlekhan helped me publish my first research paper with perfection!” – A. Singh</div>
+            <div class="testimonial">“Professional, prompt, and precise services. Highly recommended.” – Dr. R. Sharma</div>
+			<div class="testimonial">“Shodhlekhan helped me publish my first research paper with perfection!” – A. Singh</div>
+            <div class="testimonial">“Professional, prompt, and precise services. Highly recommended.” – Dr. R. Sharma</div>
+			<div class="testimonial">“Shodhlekhan helped me publish my first research paper with perfection!” – A. Singh</div>
+            <div class="testimonial">“Professional, prompt, and precise services. Highly recommended.” – Dr. R. Sharma</div>
+			<div class="testimonial">“Shodhlekhan helped me publish my first research paper with perfection!” – A. Singh</div>
+            <div class="testimonial">“Professional, prompt, and precise services. Highly recommended.” – Dr. R. Sharma</div>
+      
+		</div>
+    </section>
+
+    <section id="contact">
+        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </div>
+        <p><i class="fas fa-envelope"></i> Email: support@shodhlekhan.in</p>
+        <p><i class="fas fa-phone"></i> Phone: +91-8805794989</p>
+        <p><i class="fas fa-map-marker-alt"></i> Address: Mumbai, Maharashtra, India</p>
+    </section>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/918805794989" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Shodhlekhan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
